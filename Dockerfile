@@ -16,8 +16,7 @@ RUN mkdir /opt/notebooks
 
 # tensorflow
 RUN /opt/conda/bin/conda create -y -n tensorflow
-RUN source activate tensorflow
-RUN pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl
+RUN /bin/bash -c "source activate tensorflow && pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl"
 
 RUN apt-get purge --auto-remove -y wget
 RUN rm -rf /var/cache/apk/*
