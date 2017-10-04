@@ -16,12 +16,12 @@ RUN mkdir /opt/notebooks
 
 # tensorflow
 RUN /opt/conda/bin/conda create -y -n tensorflow
-RUN echo "#!/bin/bash" >> ~/tf.sh
-RUN echo "source activate tensorflow" >> ~/tf.sh
-RUN echo "pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl" >> ~/tf.sh
-RUN chmod +x ~/tf.sh
-RUN ["/bin/bash", "~/tf.sh"] 
-RUN rm -f ~/tf.sh
+RUN echo "#!/bin/bash" >> /tf.sh
+RUN echo "source activate tensorflow" >> /tf.sh
+RUN echo "pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl" >> /tf.sh
+RUN chmod +x /tf.sh
+RUN ["/bin/bash", "/tf.sh"] 
+RUN rm -f /tf.sh
 #RUN source activate tensorflow && pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl
 
 
