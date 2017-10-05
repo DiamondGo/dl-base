@@ -32,5 +32,7 @@ RUN rm -f tf.sh
 RUN apt-get purge --auto-remove -y wget
 RUN rm -rf /var/cache/apk/*
 
-CMD /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
+ENV NOTEBOOK_PASSWORD 'sha1:5e784f269734:9c3ea0d0ade73881b3b1ff8282f4c23252a95adc' 
+
+CMD /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --NotebookApp.password_required=True --NotebookApp.password=$NOTEBOOK_PASSWORD --allow-root
 
