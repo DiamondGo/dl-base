@@ -1,6 +1,6 @@
 FROM flowerseems/debian-base
 
-ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV LANG=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 build-essential git
 RUN wget https://repo.continuum.io/archive -O - 2>/dev/null | grep Anaconda3 | grep x86_64 | head -1 | awk -F '"' '{print $2}' |{ read uri; wget "https://repo.continuum.io/archive/${uri}" -O ~/anaconda3.sh -c -t 0; }
