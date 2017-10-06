@@ -25,9 +25,7 @@ RUN echo "source activate tensorflow" >> tf.sh
 RUN echo "pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl" >> tf.sh
 RUN chmod +x tf.sh
 RUN /bin/bash tf.sh
-#RUN ["/bin/bash", "tf.sh"] 
 RUN rm -f tf.sh
-#RUN source activate tensorflow && pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp36-cp36m-linux_x86_64.whl
 
 
 RUN apt-get purge --auto-remove -y wget
