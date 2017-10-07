@@ -12,7 +12,7 @@ ENV PATH /opt/conda/bin:$PATH
 # notebook
 #RUN /opt/conda/bin/conda install jupyter -y --quiet
 RUN conda install jupyter -y --quiet
-RUN conda install -y -c conda-forge jupyter_contrib_nbextensions
+RUN conda install -y -c conda-forge jupyter_contrib_nbextensions bcolz
 
 # theano
 RUN conda install theano -y --quiet
